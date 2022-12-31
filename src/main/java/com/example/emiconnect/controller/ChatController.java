@@ -7,10 +7,9 @@ import com.example.emiconnect.entity.User;
 import com.example.emiconnect.repositories.DiscussionRepository;
 import com.example.emiconnect.repositories.UserRepository;
 import com.example.emiconnect.services.ChatService;
-import net.minidev.json.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class ChatController {
 
     @PostMapping(path = "/api/sendMessage")
     public String sendMessage(@RequestBody RequestChat chat){
-        System.out.println(this.chatService.sendMessage(chat.getIdSrc(),chat.getIdDest(),chat.getMessage()));
+//        System.out.println(this.chatService.sendMessage(chat.getIdSrc(),chat.getIdDest(),chat.getMessage()));
         return this.chatService.sendMessage(chat.getIdSrc(),chat.getIdDest(),chat.getMessage());
     }
     @GetMapping(path = "api/fetchDiscByIdUser")
